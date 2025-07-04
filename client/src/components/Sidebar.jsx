@@ -1,12 +1,8 @@
 import { NavLink } from "react-router-dom";
 import {
   LayoutDashboard,
-  FilePlus,
-  ListOrdered,
-  CheckCircle,
-  BarChart2,
   ChevronRight,
-  TicketPlus, Tickets
+  TicketPlus, Tickets, TicketCheck, Award
 } from "lucide-react";
 
 const Sidebar = () => {
@@ -46,7 +42,7 @@ const Sidebar = () => {
               {({ isActive }) => (
                 <>
                   {isActive && <ChevronRight className="w-5 h-5 mr-1" />}
-                  <CheckCircle className="w-5 h-5" /> Ticket Approval
+                  <TicketCheck className="w-5 h-5" /> Ticket Approval
                 </>
               )}
             </NavLink>
@@ -55,7 +51,7 @@ const Sidebar = () => {
               {({ isActive }) => (
                 <>
                   {isActive && <ChevronRight className="w-5 h-5 mr-1" />}
-                  <BarChart2 className="w-5 h-5" /> Performance
+                  <Award className="w-5 h-5" /> Performance
                 </>
               )}
             </NavLink>
@@ -67,7 +63,7 @@ const Sidebar = () => {
             {({ isActive }) => (
               <>
                 {isActive && <ChevronRight className="w-5 h-5 mr-1" />}
-                <BarChart2 className="w-5 h-5" /> Performance
+                <Award className="w-5 h-5" /> Performance
               </>
             )}
           </NavLink>
