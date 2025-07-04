@@ -89,9 +89,8 @@ const NewTicketForm = () => {
                 </div>
               </div>
 
-              {/* ReCAPTCHA and Submit button side-by-side, aligned with form fields */}
               <div className="col-span-2 grid grid-cols-2 gap-6 mt-4">
-                {/* I'm not a robot */}
+ 
                 <div className="flex items-center justify-between bg-white border rounded px-4 py-2 shadow-md w-full">
                   <div className="flex items-center gap-2">
                     <input
@@ -113,7 +112,6 @@ const NewTicketForm = () => {
                   />
                 </div>
 
-                {/* Submit Button */}
                 <div className="flex justify-end items-center">
                   <button
                     type="submit"
