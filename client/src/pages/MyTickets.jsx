@@ -124,7 +124,6 @@ const MyTickets = () => {
               </div>
             </div>
 
-            {/* Modal */}
             {selectedTicket && (
               <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-40 z-50" onClick={closeModal}>
                 <div className="bg-white p-6 rounded-lg shadow-md relative w-[90%] max-w-md" onClick={(e) => e.stopPropagation()}>

@@ -8,6 +8,9 @@ import TechDashboard from './pages/TechDashboard';
 import NewTicketForm from './pages/NewTicketForm';
 import MyTickets from './pages/MyTickets';
 import UserProfile from './pages/UserProfile';
+import OperationTickets from './pages/OperationTickets';
+import TicketApproval from './pages/TicketApproval';
+import Performance from './pages/Performance';
 
 function App() {
   return (
@@ -20,9 +23,12 @@ function App() {
         <Route path="/user/dashboard" element={<UserDashboard />} />
         <Route path="/operation/dashboard" element={<OperationDashboard />} />
         <Route path="/tech/dashboard" element={<TechDashboard />} />
-         <Route path="/new-ticket" element={<NewTicketForm />} />
-         <Route path="/my-tickets" element={<MyTickets />} />
-          <Route path="/user/profile" element={<UserProfile />} />
+        <Route path="/new-ticket" element={<NewTicketForm />} />
+        <Route path="/my-tickets" element={<MyTickets />} />
+        <Route path="/user/profile" element={<UserProfile />} />
+        <Route path="operation-tickets" element={<OperationTickets />} />
+        <Route path="/ticket-approval" element={<TicketApproval />} />
+        <Route path="performance" element={<Performance />} />
       </Routes>
     </Router>
   );

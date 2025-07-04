@@ -26,6 +26,18 @@ const Sidebar = () => {
             </>
           )}
         </NavLink>
+        {role === "operation" && (
+          
+            <NavLink to="/ticket-approval" className={linkClasses} end>
+              {({ isActive }) => (
+                <>
+                  {isActive && <ChevronRight className="w-5 h-5 mr-1" />}
+                  <TicketCheck className="w-5 h-5" /> Ticket Approval
+                </>
+              )}
+            </NavLink>
+          
+        )}
 
         <NavLink to="/my-tickets" className={linkClasses}>
           {({ isActive }) => (
@@ -37,25 +49,14 @@ const Sidebar = () => {
         </NavLink>
 
         {role === "operation" && (
-          <>
-            <NavLink to="/ticket-approval" className={linkClasses} end>
-              {({ isActive }) => (
-                <>
-                  {isActive && <ChevronRight className="w-5 h-5 mr-1" />}
-                  <TicketCheck className="w-5 h-5" /> Ticket Approval
-                </>
-              )}
-            </NavLink>
-
-            <NavLink to="/performance" className={linkClasses} end>
-              {({ isActive }) => (
-                <>
-                  {isActive && <ChevronRight className="w-5 h-5 mr-1" />}
-                  <Award className="w-5 h-5" /> Performance
-                </>
-              )}
-            </NavLink>
-          </>
+          <NavLink to="/performance" className={linkClasses} end>
+            {({ isActive }) => (
+              <>
+                {isActive && <ChevronRight className="w-5 h-5 mr-1" />}
+                <Award className="w-5 h-5" /> Performance
+              </>
+            )}
+          </NavLink>
         )}
 
         {role === "tech" && (

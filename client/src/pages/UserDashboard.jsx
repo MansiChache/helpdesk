@@ -30,7 +30,7 @@ const UserDashboard = () => {
           </div>
         </div>
       </main>
-      <Footer/>
+      <Footer />
     </div>
   );
 };
