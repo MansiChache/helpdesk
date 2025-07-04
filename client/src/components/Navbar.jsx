@@ -5,6 +5,7 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
+    localStorage.removeItem('userRole');
     navigate('/login');
   };
 

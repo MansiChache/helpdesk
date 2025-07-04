@@ -1,7 +1,9 @@
 import { NavLink } from 'react-router-dom';
 import { LayoutDashboard, FilePlus, ListOrdered } from 'lucide-react';
 
-const Sidebar = ({ role }) => {
+const Sidebar = () => {
+   const role = localStorage.getItem('userRole') || 'user';
+
   const dashboardPath = role === 'operation' ? '/operation/dashboard' : '/user/dashboard';
 
   const linkClasses = ({ isActive }) =>

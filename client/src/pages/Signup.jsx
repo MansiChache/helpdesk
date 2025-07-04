@@ -1,18 +1,37 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from '../api/axios';
+
 
 const Signup = () => {
   const [form, setForm] = useState({ username: '', password: '', email: '', role: 'user' });
   const navigate = useNavigate();
 
-  const handleSignup = () => {
-    const { username, password, email, role } = form;
-    if (username && password && email && role) {
-      navigate(`/${role}/dashboard`);
+  const handleSignup = async () => {
+  const { username, password, email, role } = form;
+
+  if (!username || !password || !email || !role) {
+    alert('Please fill in all fields');
+    return;
+  }
+
+  try {
+    const res = await axios.post(
+      '/api/signup',
+      { username, password, email, role }
+    );
+
+    alert('Signup successful!');
+    navigate(`/${role}/dashboard`);
+  } catch (err) {
+    console.error('Signup error:', err);
+    if (err.response?.data?.message) {
+      alert(err.response.data.message);
     } else {
-      alert('Please fill in all fields');
+      alert('Signup failed. Please try again.');
     }
-  };
+  }
+};
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-teal-200">

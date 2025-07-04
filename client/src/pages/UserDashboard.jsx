@@ -23,7 +23,7 @@ const UserDashboard = () => {
             <TicketCard
               title="Awaiting Approval"
               count={2}
-              bgColor="#F49097"
+              bgColor="red"
             />
             <TicketCard title="In Progress" count={2} bgColor="#F5E960" />
           </div>

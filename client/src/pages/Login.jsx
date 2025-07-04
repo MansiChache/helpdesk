@@ -1,20 +1,35 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from '../api/axios';
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  const handleLogin = () => {
-    if (username && password) {
-      // 🔒 You can later fetch role from backend or localStorage
-      const dummyRole = 'user';
-      navigate(`/${dummyRole}/dashboard`);
+  const handleLogin = async () => {
+  if (!username || !password) {
+    alert('Enter username and password');
+    return;
+  }
+
+  try {
+    const res = await axios.post('/api/login', { username, password });
+
+    alert('Login successful!');
+    const role  = res.data.role; 
+    localStorage.setItem('userRole', role);
+    if (role) {
+      localStorage.setItem('userRole', role);
+      navigate(`/${role}/dashboard`);
     } else {
-      alert('Enter username and password');
+      alert('Login failed: No role returned');
     }
-  };
+  }catch (err) {
+    console.error(err);
+    alert(err.response?.data?.message || 'Login failed');
+  }
+};
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-teal-200">
