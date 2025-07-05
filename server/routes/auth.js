@@ -3,7 +3,7 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const User = require('../models/User');
 
-//signup route
+// Signup route
 router.post('/signup', async (req, res) => {
   const { username, password, email, role } = req.body;
   try {
@@ -19,7 +19,7 @@ router.post('/signup', async (req, res) => {
   }
 });
 
-//login route
+// Login route
 router.post('/login', async (req, res) => {
   try {
     const { username, password } = req.body;
@@ -27,8 +27,8 @@ router.post('/login', async (req, res) => {
     const user = await User.findOne({ username });
     if (!user) return res.status(404).json({ message: 'User not found' });
 
-    if (user.password !== password)
-      return res.status(401).json({ message: 'Invalid credentials' });
+    const valid = await bcrypt.compare(password, user.password);
+    if (!valid) return res.status(401).json({ message: 'Invalid credentials' });
 
     res.status(200).json({ message: 'Login successful', role: user.role });
   } catch (err) {
