@@ -16,7 +16,7 @@ const Sidebar = () => {
     `flex items-center gap-2 cursor-pointer font-sanchez text-[20px] `;
 
   return (
-    <aside className="fixed top-[62px] left-0 w-[250px] h-[calc(100vh-62px)] bg-gray-200 p-4 shadow-md z-40">
+    <aside className="fixed top-[62px] left-0 w-[250px] h-[calc(100vh-62px)] bg-customGrey bg-opacity-20 p-4 shadow-md z-40">
       <nav className="flex flex-col gap-6 ">
         <NavLink to={dashboardPath} className={linkClasses}>
           {({ isActive }) => (
@@ -37,6 +37,17 @@ const Sidebar = () => {
               )}
             </NavLink>
           
+        )}
+
+        {role === "user" && (
+          <NavLink to="/new-ticket" className={linkClasses}>
+            {({ isActive }) => (
+              <>
+                {isActive && <ChevronRight className="w-5 h-5 mr-1" />}
+                <TicketPlus className="w-5 h-5" /> New Ticket
+              </>
+            )}
+          </NavLink>
         )}
 
         <NavLink to="/my-tickets" className={linkClasses}>
@@ -70,16 +81,7 @@ const Sidebar = () => {
           </NavLink>
         )}
 
-        {role === "user" && (
-          <NavLink to="/new-ticket" className={linkClasses}>
-            {({ isActive }) => (
-              <>
-                {isActive && <ChevronRight className="w-5 h-5 mr-1" />}
-                <TicketPlus className="w-5 h-5" /> New Ticket
-              </>
-            )}
-          </NavLink>
-        )}
+        
       </nav>
     </aside>
   );
