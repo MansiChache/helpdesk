@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import Navbar from '../components/Navbar';
-import Sidebar from '../components/Sidebar';
+import Layout from '../components/Layout';
 import { Star, X, Search, ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight } from 'lucide-react';
+
 
 const MyTickets = () => {
   const [search, setSearch] = useState('');
@@ -30,11 +30,8 @@ const MyTickets = () => {
   const closeModal = () => setSelectedTicket(null);
 
   return (
-    <div className="flex">
-      <Sidebar role="user" />
-      <div className="flex flex-col w-full">
-        <Navbar />
-        <div className="pt-[70px] pl-[250px] min-h-screen bg-gray-50 font-sanchez">
+    <Layout>
+        <div className="bg-gray-50 font-sanchez">
           <div className="max-w-[1190px] mx-auto py-6 px-4">
             
             <h2 className="text-2xl font-medium text-center mb-6">List of Tickets</h2>
@@ -141,8 +138,8 @@ const MyTickets = () => {
             )}
           </div>
         </div>
-      </div>
-    </div>
+    </Layout>
+    
   );
 };
 

@@ -22,7 +22,7 @@ const Signup = () => {
     );
 
     alert('Signup successful!');
-    navigate(`/${role}/dashboard`);
+    navigate(`/`);
   } catch (err) {
     console.error('Signup error:', err);
     if (err.response?.data?.message) {

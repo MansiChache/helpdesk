@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
 import { Star } from 'lucide-react';
+import Layout from '../components/Layout';
 
 const UserProfile = () => {
   const [rating, setRating] = useState(0);
@@ -18,11 +19,9 @@ const UserProfile = () => {
   };
 
   return (
-    <div className="flex">
-      <Sidebar role="user" />
-      <div className="flex flex-col w-full">
-        <Navbar />
-        <div className="pt-[70px] pl-[250px] min-h-screen bg-gray-50">
+    <Layout>
+    
+        <div className="bg-gray-50">
           <div className="max-w-[1190px] mx-auto py-6 px-4">
             <div className="bg-navbar p-6 rounded-lg">
               <div className="bg-white rounded-lg p-6 shadow-md mb-6">
@@ -69,8 +68,7 @@ const UserProfile = () => {
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </Layout>
   );
 };
 

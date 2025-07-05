@@ -1,6 +1,4 @@
-// src/pages/Performance.jsx
-import Navbar from "../components/Navbar";
-import Sidebar from "../components/Sidebar";
+import Layout from "../components/Layout";
 import { User, Star } from "lucide-react";
 
 const Performance = () => {
@@ -16,14 +14,11 @@ const Performance = () => {
   };
 
   return (
-    <div className="flex">
-      <Sidebar role="operation" />
-      <div className="flex flex-col w-full">
-        <Navbar />
-        <div className="pt-[70px] pl-[250px] min-h-screen bg-white">
+    <Layout>
+    
+        <div className="bg-white">
           <div className="max-w-[1190px] mx-auto py-6 px-4 grid grid-cols-2 gap-6 items-start">
-            
-            {/* Left Section */}
+          
             <div>
               <div className="flex items-center gap-4 mb-4">
                 <div className="bg-gray-200 p-4 rounded-full">
@@ -34,13 +29,11 @@ const Performance = () => {
                 </div>
               </div>
 
-              {/* Contact + Department */}
               <div className="bg-gray-200 p-4 rounded mb-4">
                 <p><strong>Contact:</strong> {performanceData.contact}</p>
                 <p><strong>Department:</strong> {performanceData.department}</p>
               </div>
 
-              {/* Ticket Summary */}
               <div className="bg-gray-200 p-4 rounded space-y-2 text-sm">
                 <div className="flex justify-between">
                   <span className="font-semibold">Total Tickets Handled</span>
@@ -77,7 +70,6 @@ const Performance = () => {
               </div>
             </div>
 
-            {/* Right Section */}
             <div className="flex flex-col items-center justify-center text-center gap-3">
               <div className="bg-gray-200 p-4 rounded-full">
                 <User size={40} />
@@ -90,8 +82,7 @@ const Performance = () => {
 
           </div>
         </div>
-      </div>
-    </div>
+    </Layout>
   );
 };
 

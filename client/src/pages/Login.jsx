@@ -16,7 +16,6 @@ const Login = () => {
     try {
       const res = await axios.post("/api/login", { username, password });
 
-      alert("Login successful!");
       const role = res.data.role;
       localStorage.setItem("userRole", role);
       if (role) {
