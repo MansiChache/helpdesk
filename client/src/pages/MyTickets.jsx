@@ -50,6 +50,8 @@ const MyTickets = () => {
         return "bg-customDarkBlue text-white";
       case "Closed":
         return "bg-gray-600 text-white";
+      default: 
+        return "bg-gray-600 text-white"
     }
   };
 
@@ -194,22 +196,52 @@ const MyTickets = () => {
                 >
                   <X />
                 </button>
-                <h3 className="font-bold text-lg mb-4">Ticket Details</h3>
+                <h3 className=" text-2xl mb-4 text-center">Ticket Details</h3>
                 <p>
-                  <strong>ID:</strong> {selectedTicket.id}
+                  <span className="mr-2">Ticket No:</span> 
+                  {selectedTicket.id}
                 </p>
                 <p>
-                  <strong>Subject:</strong> {selectedTicket.subject}
+                  <span className="mr-2">Date:</span> 
+                  {selectedTicket.date}
                 </p>
                 <p>
-                  <strong>Status:</strong> {selectedTicket.status}
+                  <span className="mr-2">Name:</span> 
                 </p>
                 <p>
-                  <strong>Date:</strong> {selectedTicket.date}
+                  <span className="mr-2">Dept:</span> 
+                </p>
+                <br />
+                <p>
+                  <span className="mr-2">Title:</span> 
+                  {selectedTicket.subject}
                 </p>
                 <p>
-                  <strong>Support By:</strong> {selectedTicket.supportBy}
+                  <span className="mr-2">Description:</span> 
                 </p>
+                <p>
+                  <span className="mr-2">Category:</span> 
+                  {selectedTicket.supportBy}
+                </p>
+                <p>
+                  <span className="mr-2">Type:</span> 
+                </p>
+                <p>
+                  <span className="mr-2">Priority:</span> 
+                </p>
+                <p>
+                  <span className="mr-2">Status:</span> 
+                  {selectedTicket.status}
+                </p>
+                <p>
+                  <span className="mr-2">Attachment:</span> 
+                </p>
+                <button
+                      onClick={closeModal}
+                      className="bg-customGreen text-black px-8 py-1 block mx-auto rounded"
+                    >
+                      Close
+                    </button>
               </div>
             </div>
           )}

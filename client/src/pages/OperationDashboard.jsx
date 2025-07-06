@@ -11,10 +11,9 @@ const OperationTeamDashboard = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           <TicketCard title="Total Tickets" count={12} />
-<TicketCard title="Total Solved" count={8} />
-<TicketCard title="Awaiting Approval" count={2} />
-<TicketCard title="In Progress" count={2} />
-
+          <TicketCard title="Total Solved" count={8} />
+          <TicketCard title="Awaiting Approval" count={2} />
+          <TicketCard title="In Progress" count={2} />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-10">

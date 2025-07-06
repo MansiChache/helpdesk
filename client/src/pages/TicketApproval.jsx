@@ -1,7 +1,18 @@
 import { useState, useRef, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
-import { Check, X, RefreshCcw, Plus, XCircle, Search, ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight } from "lucide-react";
+import {
+  Check,
+  X,
+  RefreshCcw,
+  Plus,
+  XCircle,
+  Search,
+  ChevronLeft,
+  ChevronRight,
+  ChevronsLeft,
+  ChevronsRight,
+} from "lucide-react";
 
 const TicketApproval = () => {
   const [selectedTicket, setSelectedTicket] = useState(null);
@@ -103,19 +114,20 @@ const TicketApproval = () => {
     setUpdateModalOpen(true);
   };
 
-  const handleOutsideClick = (e) => {
-    if (modalRef.current && !modalRef.current.contains(e.target)) {
-      closeTicketModal();
-    }
-  };
-
   useEffect(() => {
+    const handleOutsideClick = (e) => {
+      if (modalRef.current && !modalRef.current.contains(e.target)) {
+        closeTicketModal();
+      }
+    };
+
     if (selectedTicket || isUpdateModalOpen) {
       document.addEventListener("mousedown", handleOutsideClick);
-    } else {
-      document.removeEventListener("mousedown", handleOutsideClick);
     }
-    return () => document.removeEventListener("mousedown", handleOutsideClick);
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
   }, [selectedTicket, isUpdateModalOpen]);
 
   const filteredTickets = tickets
@@ -163,10 +175,10 @@ const TicketApproval = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-lg shadow overflow-x-auto mt-4">
-              <table className="min-w-full text-sm text-left border-collapse">
+            <div className="shadow overflow-x-auto mt-4 ">
+              <table className="min-w-full text-sm text-left">
                 <thead>
-                  <tr className="border-b border-transparent">
+                  <tr>
                     <th className="py-3 px-6">Ticket No</th>
                     <th className="py-3 px-6">Subject</th>
                     <th className="py-3 px-6">Category</th>
@@ -226,7 +238,8 @@ const TicketApproval = () => {
 
             <div className="flex justify-between items-center mt-4 text-sm text-gray-600">
               <p>
-                Showing 1 to {filteredTickets.length} of {tickets.length} entries
+                Showing 1 to {filteredTickets.length} of {tickets.length}{" "}
+                entries
               </p>
               <div className="flex items-center">
                 <ChevronsLeft />

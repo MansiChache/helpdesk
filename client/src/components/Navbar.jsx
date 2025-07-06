@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaBell, FaUserAlt, FaSignOutAlt } from 'react-icons/fa';
 
@@ -10,6 +10,10 @@ const Navbar = () => {
   const handleToggle = (selection) => {
     setActiveSelection(selection);
   };
+
+  const goToNotification = () => {
+    alert("Currently no notifications for you!");
+  }
 
   const handleLogout = () => {
     localStorage.removeItem('userRole');
@@ -52,8 +56,10 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Existing icons */}
-        <FaBell className="text-black w-5 h-5"/>
+        <FaBell 
+          className="text-black w-5 h-5"
+          onClick={goToNotification}
+        />
         <FaUserAlt
           className="text-black w-5 h-5 cursor-pointer"
           onClick={goToProfile}

@@ -8,6 +8,7 @@ import TechDashboard from './pages/TechDashboard';
 import NewTicketForm from './pages/NewTicketForm';
 import MyTickets from './pages/MyTickets';
 import UserProfile from './pages/UserProfile';
+import EditProfile from './pages/EditProfile'
 import OperationTickets from './pages/OperationTickets';
 import TicketApproval from './pages/TicketApproval';
 import Performance from './pages/Performance';
@@ -26,6 +27,7 @@ function App() {
         <Route path="/new-ticket" element={<NewTicketForm />} />
         <Route path="/my-tickets" element={<MyTickets />} />
         <Route path="/user/profile" element={<UserProfile />} />
+        <Route path='/edit/profile' element={<EditProfile />} />
         <Route path="operation-tickets" element={<OperationTickets />} />
         <Route path="/ticket-approval" element={<TicketApproval />} />
         <Route path="performance" element={<Performance />} />

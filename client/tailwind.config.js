@@ -15,10 +15,10 @@ module.exports = {
         customDarkBlue: '#05386B',
         customGrey: '#6A6767',
         tableGrey: '#C4C4C4',
+        tableGreyD: '#8F8C8C',
       },
       fontFamily: {
-        sanchez: ['Sanchez', 'serif'], // 'Sanchez' is the name you give it, 'serif' is a fallback
-        // You can add other custom fonts here too
+        sanchez: ['Sanchez', 'serif'], 
       },
     },
   },
